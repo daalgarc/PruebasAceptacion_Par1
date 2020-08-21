@@ -62,9 +62,6 @@ Feature: Search games by name
       Then 0 games will match
       And the following message is displayed: No game with the specified rating was found.
 
-
-
-
   @gamesByStudy
   Scenario: Find games by study with Bandai Namco Studios
       Given a set of games

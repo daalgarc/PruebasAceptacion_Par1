@@ -1,0 +1,1225 @@
+[
+    {
+        "keyword": "Feature",
+        "name": "Search games by name",
+        "tags": [],
+        "elements": [
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "Filter games that contain the word 'The' in their name",
+                "tags": [
+                    {
+                        "name": "@gamesByName",
+                        "line": 5
+                    }
+                ],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "a set of games",
+                        "table": {
+                            "headings": [
+                                "NAME",
+                                "RELEASE DATE",
+                                "DEVELOPER",
+                                "RATE"
+                            ],
+                            "rows": [
+                                [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                [
+                                    "Super Smash Bros. Ultimate",
+                                    "2018",
+                                    "Bandai Namco Studios",
+                                    "E"
+                                ],
+                                [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ]
+                            ]
+                        },
+                        "match": {
+                            "location": "features/steps/filter_games.py:9",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.002939462661743164
+                        },
+                        "line": 7,
+                        "rows": [
+                            {
+                                "cells": [
+                                    "NAME",
+                                    "RELEASE DATE",
+                                    "DEVELOPER",
+                                    "RATE"
+                                ],
+                                "line": 8
+                            },
+                            {
+                                "cells": [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                "line": 9
+                            },
+                            {
+                                "cells": [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                "line": 10
+                            },
+                            {
+                                "cells": [
+                                    "Super Smash Bros. Ultimate",
+                                    "2018",
+                                    "Bandai Namco Studios",
+                                    "E"
+                                ],
+                                "line": 11
+                            },
+                            {
+                                "cells": [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ],
+                                "line": 12
+                            }
+                        ]
+                    },
+                    {
+                        "keyword": "Given",
+                        "name": "the user enters the name: The",
+                        "match": {
+                            "location": "features/steps/filter_games.py:22",
+                            "arguments": [
+                                {
+                                    "value": "The",
+                                    "name": "name"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0013065338134765625
+                        },
+                        "line": 13
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "the user search games by name",
+                        "match": {
+                            "location": "features/steps/filter_games.py:35",
+                            "arguments": [
+                                {
+                                    "value": "name",
+                                    "name": "criteria"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.002106904983520508
+                        },
+                        "line": 14
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "2 games will match",
+                        "match": {
+                            "location": "features/steps/filter_games.py:58",
+                            "arguments": [
+                                {
+                                    "value": "2",
+                                    "name": "total"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 6.031990051269531e-05
+                        },
+                        "line": 15
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "the names of these games are",
+                        "table": {
+                            "headings": [
+                                "NAME"
+                            ],
+                            "rows": [
+                                [
+                                    "The Witcher 3: Wild Hunt"
+                                ],
+                                [
+                                    "The Last of Us"
+                                ]
+                            ]
+                        },
+                        "match": {
+                            "location": "features/steps/filter_games.py:63",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 4.38690185546875e-05
+                        },
+                        "line": 16,
+                        "rows": [
+                            {
+                                "cells": [
+                                    "NAME"
+                                ],
+                                "line": 17
+                            },
+                            {
+                                "cells": [
+                                    "The Witcher 3: Wild Hunt"
+                                ],
+                                "line": 18
+                            },
+                            {
+                                "cells": [
+                                    "The Last of Us"
+                                ],
+                                "line": 19
+                            }
+                        ]
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "the following message is displayed: 2 games were found containing the word: The",
+                        "match": {
+                            "location": "features/steps/filter_games.py:75",
+                            "arguments": [
+                                {
+                                    "value": "2 games were found containing the word: The",
+                                    "name": "message"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 6.318092346191406e-05
+                        },
+                        "line": 20
+                    }
+                ],
+                "line": 6,
+                "uri": "features/filter_game_name.feature",
+                "description": "",
+                "id": 1
+            },
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "Filter games by name without finding result",
+                "tags": [
+                    {
+                        "name": "@gamesByName",
+                        "line": 23
+                    }
+                ],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "a set of games",
+                        "table": {
+                            "headings": [
+                                "NAME",
+                                "RELEASE DATE",
+                                "DEVELOPER",
+                                "RATE"
+                            ],
+                            "rows": [
+                                [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                [
+                                    "Super Smash Bros. Ultimate",
+                                    "2018",
+                                    "Bandai Namco Studios",
+                                    "E"
+                                ],
+                                [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ]
+                            ]
+                        },
+                        "match": {
+                            "location": "features/steps/filter_games.py:9",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0010602474212646484
+                        },
+                        "line": 25,
+                        "rows": [
+                            {
+                                "cells": [
+                                    "NAME",
+                                    "RELEASE DATE",
+                                    "DEVELOPER",
+                                    "RATE"
+                                ],
+                                "line": 26
+                            },
+                            {
+                                "cells": [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                "line": 27
+                            },
+                            {
+                                "cells": [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                "line": 28
+                            },
+                            {
+                                "cells": [
+                                    "Super Smash Bros. Ultimate",
+                                    "2018",
+                                    "Bandai Namco Studios",
+                                    "E"
+                                ],
+                                "line": 29
+                            },
+                            {
+                                "cells": [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ],
+                                "line": 30
+                            }
+                        ]
+                    },
+                    {
+                        "keyword": "Given",
+                        "name": "the user enters the name: 'xyz'",
+                        "match": {
+                            "location": "features/steps/filter_games.py:22",
+                            "arguments": [
+                                {
+                                    "value": "'xyz'",
+                                    "name": "name"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0010211467742919922
+                        },
+                        "line": 31
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "the user search games by name",
+                        "match": {
+                            "location": "features/steps/filter_games.py:35",
+                            "arguments": [
+                                {
+                                    "value": "name",
+                                    "name": "criteria"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0020012855529785156
+                        },
+                        "line": 32
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "0 games will match",
+                        "match": {
+                            "location": "features/steps/filter_games.py:58",
+                            "arguments": [
+                                {
+                                    "value": "0",
+                                    "name": "total"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 3.814697265625e-05
+                        },
+                        "line": 33
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "the following message is displayed: No game with the specified name was found.",
+                        "match": {
+                            "location": "features/steps/filter_games.py:75",
+                            "arguments": [
+                                {
+                                    "value": "No game with the specified name was found.",
+                                    "name": "message"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 3.695487976074219e-05
+                        },
+                        "line": 34
+                    }
+                ],
+                "line": 24,
+                "uri": "features/filter_game_name.feature",
+                "description": "",
+                "id": 2
+            },
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "Find games by type of audience with M rating",
+                "tags": [
+                    {
+                        "name": "@gamesByRating",
+                        "line": 36
+                    }
+                ],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "a set of games",
+                        "table": {
+                            "headings": [
+                                "NAME",
+                                "RELEASE DATE",
+                                "DEVELOPER",
+                                "RATE"
+                            ],
+                            "rows": [
+                                [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                [
+                                    "Super Smash Bros. Ultimate",
+                                    "2018",
+                                    "Bandai Namco Studios",
+                                    "E"
+                                ],
+                                [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ]
+                            ]
+                        },
+                        "match": {
+                            "location": "features/steps/filter_games.py:9",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.001054525375366211
+                        },
+                        "line": 38,
+                        "rows": [
+                            {
+                                "cells": [
+                                    "NAME",
+                                    "RELEASE DATE",
+                                    "DEVELOPER",
+                                    "RATE"
+                                ],
+                                "line": 39
+                            },
+                            {
+                                "cells": [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                "line": 40
+                            },
+                            {
+                                "cells": [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                "line": 41
+                            },
+                            {
+                                "cells": [
+                                    "Super Smash Bros. Ultimate",
+                                    "2018",
+                                    "Bandai Namco Studios",
+                                    "E"
+                                ],
+                                "line": 42
+                            },
+                            {
+                                "cells": [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ],
+                                "line": 43
+                            }
+                        ]
+                    },
+                    {
+                        "keyword": "Given",
+                        "name": "the user enters the rating: M",
+                        "match": {
+                            "location": "features/steps/filter_games.py:26",
+                            "arguments": [
+                                {
+                                    "value": "M",
+                                    "name": "rating"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0010380744934082031
+                        },
+                        "line": 44
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "the user search games by rating",
+                        "match": {
+                            "location": "features/steps/filter_games.py:35",
+                            "arguments": [
+                                {
+                                    "value": "rating",
+                                    "name": "criteria"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.003501415252685547
+                        },
+                        "line": 45
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "2 games will match",
+                        "match": {
+                            "location": "features/steps/filter_games.py:58",
+                            "arguments": [
+                                {
+                                    "value": "2",
+                                    "name": "total"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 5.53131103515625e-05
+                        },
+                        "line": 46
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "the names of these games are",
+                        "table": {
+                            "headings": [
+                                "NAME"
+                            ],
+                            "rows": [
+                                [
+                                    "The Witcher 3: Wild Hunt"
+                                ],
+                                [
+                                    "The Last of Us"
+                                ]
+                            ]
+                        },
+                        "match": {
+                            "location": "features/steps/filter_games.py:63",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 4.100799560546875e-05
+                        },
+                        "line": 47,
+                        "rows": [
+                            {
+                                "cells": [
+                                    "NAME"
+                                ],
+                                "line": 48
+                            },
+                            {
+                                "cells": [
+                                    "The Witcher 3: Wild Hunt"
+                                ],
+                                "line": 49
+                            },
+                            {
+                                "cells": [
+                                    "The Last of Us"
+                                ],
+                                "line": 50
+                            }
+                        ]
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "the following message is displayed: 2 games were found.",
+                        "match": {
+                            "location": "features/steps/filter_games.py:75",
+                            "arguments": [
+                                {
+                                    "value": "2 games were found.",
+                                    "name": "message"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 4.00543212890625e-05
+                        },
+                        "line": 51
+                    }
+                ],
+                "line": 37,
+                "uri": "features/filter_game_name.feature",
+                "description": "",
+                "id": 3
+            },
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "Find games by type of audience with no result",
+                "tags": [
+                    {
+                        "name": "@gamesByRating",
+                        "line": 53
+                    }
+                ],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "a set of games",
+                        "table": {
+                            "headings": [
+                                "NAME",
+                                "RELEASE DATE",
+                                "DEVELOPER",
+                                "RATE"
+                            ],
+                            "rows": [
+                                [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ]
+                            ]
+                        },
+                        "match": {
+                            "location": "features/steps/filter_games.py:9",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0014185905456542969
+                        },
+                        "line": 55,
+                        "rows": [
+                            {
+                                "cells": [
+                                    "NAME",
+                                    "RELEASE DATE",
+                                    "DEVELOPER",
+                                    "RATE"
+                                ],
+                                "line": 56
+                            },
+                            {
+                                "cells": [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                "line": 57
+                            },
+                            {
+                                "cells": [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                "line": 58
+                            },
+                            {
+                                "cells": [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ],
+                                "line": 59
+                            }
+                        ]
+                    },
+                    {
+                        "keyword": "Given",
+                        "name": "the user enters the rating: E",
+                        "match": {
+                            "location": "features/steps/filter_games.py:26",
+                            "arguments": [
+                                {
+                                    "value": "E",
+                                    "name": "rating"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0011470317840576172
+                        },
+                        "line": 60
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "the user search games by rating",
+                        "match": {
+                            "location": "features/steps/filter_games.py:35",
+                            "arguments": [
+                                {
+                                    "value": "rating",
+                                    "name": "criteria"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0032067298889160156
+                        },
+                        "line": 61
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "0 games will match",
+                        "match": {
+                            "location": "features/steps/filter_games.py:58",
+                            "arguments": [
+                                {
+                                    "value": "0",
+                                    "name": "total"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 5.507469177246094e-05
+                        },
+                        "line": 62
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "the following message is displayed: No game with the specified rating was found.",
+                        "match": {
+                            "location": "features/steps/filter_games.py:75",
+                            "arguments": [
+                                {
+                                    "value": "No game with the specified rating was found.",
+                                    "name": "message"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 4.2438507080078125e-05
+                        },
+                        "line": 63
+                    }
+                ],
+                "line": 54,
+                "uri": "features/filter_game_name.feature",
+                "description": "",
+                "id": 4
+            },
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "Find games by study with Bandai Namco Studios",
+                "tags": [
+                    {
+                        "name": "@gamesByStudy",
+                        "line": 65
+                    }
+                ],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "a set of games",
+                        "table": {
+                            "headings": [
+                                "NAME",
+                                "RELEASE DATE",
+                                "DEVELOPER",
+                                "RATE"
+                            ],
+                            "rows": [
+                                [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                [
+                                    "Super Smash Bros. Ultimate",
+                                    "2018",
+                                    "Bandai Namco Studios",
+                                    "E"
+                                ],
+                                [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ]
+                            ]
+                        },
+                        "match": {
+                            "location": "features/steps/filter_games.py:9",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0010581016540527344
+                        },
+                        "line": 67,
+                        "rows": [
+                            {
+                                "cells": [
+                                    "NAME",
+                                    "RELEASE DATE",
+                                    "DEVELOPER",
+                                    "RATE"
+                                ],
+                                "line": 68
+                            },
+                            {
+                                "cells": [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                "line": 69
+                            },
+                            {
+                                "cells": [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                "line": 70
+                            },
+                            {
+                                "cells": [
+                                    "Super Smash Bros. Ultimate",
+                                    "2018",
+                                    "Bandai Namco Studios",
+                                    "E"
+                                ],
+                                "line": 71
+                            },
+                            {
+                                "cells": [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ],
+                                "line": 72
+                            }
+                        ]
+                    },
+                    {
+                        "keyword": "Given",
+                        "name": "the user enters the study: Bandai Namco Studios",
+                        "match": {
+                            "location": "features/steps/filter_games.py:30",
+                            "arguments": [
+                                {
+                                    "value": "Bandai Namco Studios",
+                                    "name": "study"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0010097026824951172
+                        },
+                        "line": 73
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "the user search games by study",
+                        "match": {
+                            "location": "features/steps/filter_games.py:35",
+                            "arguments": [
+                                {
+                                    "value": "study",
+                                    "name": "criteria"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0020287036895751953
+                        },
+                        "line": 74
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "1 games will match",
+                        "match": {
+                            "location": "features/steps/filter_games.py:58",
+                            "arguments": [
+                                {
+                                    "value": "1",
+                                    "name": "total"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 5.125999450683594e-05
+                        },
+                        "line": 75
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "the names of these games are",
+                        "table": {
+                            "headings": [
+                                "NAME"
+                            ],
+                            "rows": [
+                                [
+                                    "Super Smash Bros. Ultimate"
+                                ]
+                            ]
+                        },
+                        "match": {
+                            "location": "features/steps/filter_games.py:63",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 4.291534423828125e-05
+                        },
+                        "line": 76,
+                        "rows": [
+                            {
+                                "cells": [
+                                    "NAME"
+                                ],
+                                "line": 77
+                            },
+                            {
+                                "cells": [
+                                    "Super Smash Bros. Ultimate"
+                                ],
+                                "line": 78
+                            }
+                        ]
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "the following message is displayed: A game developed by Bandai Namco Studios was found.",
+                        "match": {
+                            "location": "features/steps/filter_games.py:75",
+                            "arguments": [
+                                {
+                                    "value": "A game developed by Bandai Namco Studios was found.",
+                                    "name": "message"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 4.029273986816406e-05
+                        },
+                        "line": 79
+                    }
+                ],
+                "line": 66,
+                "uri": "features/filter_game_name.feature",
+                "description": "",
+                "id": 5
+            },
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "Find games by study with no matches",
+                "tags": [
+                    {
+                        "name": "@gamesByStudy",
+                        "line": 82
+                    }
+                ],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "a set of games",
+                        "table": {
+                            "headings": [
+                                "NAME",
+                                "RELEASE DATE",
+                                "DEVELOPER",
+                                "RATE"
+                            ],
+                            "rows": [
+                                [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                [
+                                    "Super Smash Bros. Ultimate",
+                                    "2018",
+                                    "Bandai Namco Studios",
+                                    "E"
+                                ],
+                                [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ]
+                            ]
+                        },
+                        "match": {
+                            "location": "features/steps/filter_games.py:9",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.0010547637939453125
+                        },
+                        "line": 84,
+                        "rows": [
+                            {
+                                "cells": [
+                                    "NAME",
+                                    "RELEASE DATE",
+                                    "DEVELOPER",
+                                    "RATE"
+                                ],
+                                "line": 85
+                            },
+                            {
+                                "cells": [
+                                    "The Witcher 3: Wild Hunt",
+                                    "2015",
+                                    "CD Projekt",
+                                    "M"
+                                ],
+                                "line": 86
+                            },
+                            {
+                                "cells": [
+                                    "Splatoon",
+                                    "2016",
+                                    "Nintendo",
+                                    "T"
+                                ],
+                                "line": 87
+                            },
+                            {
+                                "cells": [
+                                    "Super Smash Bros. Ultimate",
+                                    "2018",
+                                    "Bandai Namco Studios",
+                                    "E"
+                                ],
+                                "line": 88
+                            },
+                            {
+                                "cells": [
+                                    "The Last of Us",
+                                    "2013",
+                                    "Naughty Dog",
+                                    "M"
+                                ],
+                                "line": 89
+                            }
+                        ]
+                    },
+                    {
+                        "keyword": "Given",
+                        "name": "the user enters the study: Solaris",
+                        "match": {
+                            "location": "features/steps/filter_games.py:30",
+                            "arguments": [
+                                {
+                                    "value": "Solaris",
+                                    "name": "study"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.001157999038696289
+                        },
+                        "line": 90
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "the user search games by study",
+                        "match": {
+                            "location": "features/steps/filter_games.py:35",
+                            "arguments": [
+                                {
+                                    "value": "study",
+                                    "name": "criteria"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 0.002024412155151367
+                        },
+                        "line": 91
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "0 games will match",
+                        "match": {
+                            "location": "features/steps/filter_games.py:58",
+                            "arguments": [
+                                {
+                                    "value": "0",
+                                    "name": "total"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 4.00543212890625e-05
+                        },
+                        "line": 92
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "the following message is displayed: No game developed by Solaris found",
+                        "match": {
+                            "location": "features/steps/filter_games.py:75",
+                            "arguments": [
+                                {
+                                    "value": "No game developed by Solaris found",
+                                    "name": "message"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 3.814697265625e-05
+                        },
+                        "line": 93
+                    }
+                ],
+                "line": 83,
+                "uri": "features/filter_game_name.feature",
+                "description": "",
+                "id": 6
+            }
+        ],
+        "line": 3,
+        "uri": "features/filter_game_name.feature",
+        "description": "",
+        "id": 0
+    }
+]
